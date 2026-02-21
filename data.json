@@ -1,0 +1,57 @@
+[
+  {
+    "id": "NY",
+    "ip": "192.212.174.101",
+    "location": {
+      "country": "United States",
+      "city": "Brooklyn, NY",
+      "postalCode": "10001",
+      "timezone": "UTC -05:00"
+    },
+    "isp": "SpaceX Starlink"
+  },
+  {
+    "id": "Berlin",
+    "ip": "88.198.14.22",
+    "location": {
+      "country": "Germany",
+      "city": "Berlin",
+      "postalCode": "10115",
+      "timezone": "UTC +01:00"
+    },
+    "isp": "Hetzner Online"
+  },
+  {
+    "id": "Mumbai",
+    "ip": "103.21.244.5",
+    "location": {
+      "country": "India",
+      "city": "Mumbai",
+      "postalCode": "400001",
+      "timezone": "UTC +05:30"
+    },
+    "isp": "Reliance Jio"
+  },
+  {
+    "id": "London",
+    "ip": "31.13.71.36",
+    "location": {
+      "country": "United Kingdom",
+      "city": "London",
+      "postalCode": "EC1A 1BB",
+      "timezone": "UTC +00:00"
+    },
+    "isp": "BT Group"
+  },
+  {
+    "id": "Almaty",
+    "ip": "185.60.216.35",
+    "location": {
+      "country": "Kazakhstan",
+      "city": "Almaty",
+      "postalCode": "050000",
+      "timezone": "UTC +05:00"
+    },
+    "isp": "Kazakhtelecom"
+  }
+]

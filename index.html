@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | IP Address Tracker</title>
+</head>
+<style>
+  body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    background-color: aliceblue;
+  }
+  .top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    position: absolute;
+    color: white;
+    margin-left: 550px;
+    margin-top: 50px;
+  }
+  .container{
+    position: relative;
+  }
+  .input{
+    width: 320px;
+    height: 40px;
+    border-radius: 10px 0px 0px 10px;
+    border: none;
+    outline:none;
+  }
+  .box{
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 1090px;
+    height: 150px;
+    align-items: center;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 200px;
+    gap: 90px;
+  }
+  .go{
+    width: 50px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 0px 10px 10px 0px;
+    border: none;
+  }
+  .row{
+    display: flex;
+    flex-direction: row;
+  }
+  .box hr{
+  width: 1px;      
+  height: 90px;    
+  background-color: #ddd;
+  border: none;
+  margin:  30px;
+}
+.in1{
+  margin-left: 50px;
+}
+</style>
+<body>
+  <div class="container">
+    <div class="top">
+      <h2>IP Address Tracker</h2>
+      <div class="row">
+        <input  class="input" type="text" placeholder="Search for any IP address or domain">
+         <button class="go"> > </button>
+      </div>
+    </div>
+    <img src="images/pattern-bg-desktop.png">
+    <div class="box">  
+    </div>
+  </div>
+
+</body>
+<script>
+  const button = document.querySelector(".go");
+  const searchInput = document.querySelector(".input");
+  const box = document.querySelector(".box");
+  const URL = "./data.json";
+
+  button.addEventListener("click", async function(){
+    const promise = await fetch(URL);
+    const data = await promise.json();
+    box.innerHTML = '';
+
+    for (let i = 0; i < data.length; i++){
+      const izdeu = searchInput.value.trim();
+      const qala = data[i].id.toLowerCase();
+
+      if (qala.includes(izdeu.toLowerCase())){
+        box.innerHTML = `
+        <div class="in1">
+       <span>IP Address</span>
+       <h6>${data[i].ip}</h6> 
+      </div>
+      <hr>
+      <div class="in">
+       <span>Location</span>
+       <h6>${data[i].location.country}, ${data[i].location.city}</h6> 
+      </div>
+      <hr>
+      <div class="in">
+       <span>Timezone</span>
+       <h6>${data[i].location.timezone}</h6> 
+      </div>
+      <hr>
+      <div class="in">
+       <span>ISP</span>
+       <h6>${data[i].isp}</h6> 
+      </div>`;
+      };
+    };
+  })
+</script>
+</html>
